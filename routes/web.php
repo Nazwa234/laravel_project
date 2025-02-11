@@ -16,7 +16,12 @@ Route::get('/admin/inputbuku', function () {
 // });
 
 Route::get('/admin/inputkategori', [CategoryController::class, 'Index'])
-                                    ->name("admin.inputkategori");
+                                        ->name("admin.inputkategori");
+
+
+Route::post('/admin/inputkategori', [CategoryController::class, 'store'])
+                                        ->name('admin.storekategori');
+
 
 Route::get('/admin/inputpenulis', function () {
     return view('admin.inputpenulis');
